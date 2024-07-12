@@ -1,0 +1,53 @@
+import java.utill.*;
+  public class Student{
+  private String id;
+  private String name;
+  private String sushehao;
+
+  public Student(String id, String name, sushehao=null){
+        this id = id;
+        this name = name;
+        this sushehao = sushehao
+  }
+
+  public String getId(){return id;}
+  public void setId(String id){this.id = id}
+  public String getName(){return name;}
+  public void setName(String name){this.name = name}
+  public String getSushehao(){return sushehao}
+  public void setSushehao(String sushehao){this sushehao = sushehao}
+  }
+//写一个宿舍管理系统
+public class sushemanager{
+  private Map<String, Student> students; //储存学生信息
+  private Map<String, Boolean> documents; //储存宿舍状态
+
+  public sushemanager(){
+      this.students = new HashMap<>();
+      this.documents = new HashMap<>();
+  }
+
+  //添加学生
+  public void addStudents(Student student){
+      students.put(student.getId(), student);
+  }
+  //分配宿舍
+  public boolean fenpeisushe(String studentId, String sushehao){
+        if (!dormitories.containsKey(sushehao) || dormitories.get(sushehao)) {
+            System.out.println("宿舍已被占用或不存在。");
+            return false;  
+    }
+    Student student = students.get(studentId);
+     if (student == null) {
+            System.out.println("学生不存在。");
+            return false;
+        }
+     student.setSushehao(sushehao);
+        documents.put(sushehao, true);
+        return true;
+  }
+}
+
+
+
+
